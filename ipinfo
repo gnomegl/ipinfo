@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    echo "Error: Please provide an IP address"
+    echo "Usage: ipinfo <ip_address>"
+    exit 1
+fi
+
+ip_address="$1"
+
+curl -s "ipinfo.io/widget/demo/$ip_address" | jq
